@@ -1,0 +1,17 @@
+{
+    "code": "default",
+    "name": {
+        "zh-cn": "MySara",
+        "en": "MySara Default Theme"
+    },
+    "description": {
+        "zh-cn": "MySara",
+        "en": "MySara Default Theme"
+    },
+    "version": "v1.0.0",
+    "icon": "/images/logo.png",
+    "author": {
+        "name": "MySara",
+        "email": "team@mysara.com"
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "plugins/PartnerLink"]
+	path = plugins/PartnerLink
+	url = git@mysara.work:splugins/PartnerLink.git
