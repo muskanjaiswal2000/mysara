@@ -21,7 +21,6 @@
           </label>
           
           @if($optionType === 'select')
-            {{-- 下拉选择框 --}}
             <select class="form-select option-select mt-2" 
                     name="option_{{ $option->id }}" 
                     data-option-id="{{ $option->id }}">
@@ -49,7 +48,6 @@
             </select>
             
           @elseif($optionType === 'radio')
-            {{-- 单选按钮 --}}
             <div class="option-values radio-group mt-2 d-flex flex-wrap gap-2">
               @foreach($productOptionValues as $productOptionValue)
                 @php
@@ -90,7 +88,6 @@
             </div>
             
           @elseif($optionType === 'checkbox')
-            {{-- 多选复选框 --}}
             <div class="option-values checkbox-group mt-2 d-flex flex-wrap gap-2">
               @foreach($productOptionValues as $productOptionValue)
                 @php
@@ -131,7 +128,6 @@
             </div>
           @endif
           
-          {{-- 选项描述放在选项值列表下方 --}}
           @if($option->description && is_array($option->description))
             <div class="option-description mt-3">
               <small class="text-muted">
@@ -143,7 +139,6 @@
       @endif
     @endforeach
     
-    <!-- 当前选择和总价显示区域 -->
     <div class="current-selection-summary mb-4" style="display: none;">
       <div class="card">
         <div class="card-body p-3">

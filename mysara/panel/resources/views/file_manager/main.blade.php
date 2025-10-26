@@ -2,6 +2,58 @@
     <script src="{{ asset('vendor/vue/2.7/vue.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('vendor/element-ui/element-ui.css') }}">
     <script src="{{ asset('vendor/element-ui/element-ui.js') }}"></script>
+    <script>
+      // Set Element UI locale to English (provide fallback if not bundled)
+      (function() {
+        try {
+          if (window.ELEMENT && typeof window.ELEMENT.locale === 'function') {
+            var en = (window.ELEMENT.lang && window.ELEMENT.lang.en) ? window.ELEMENT.lang.en : {
+              name: 'en',
+              el: {
+                colorpicker: { confirm: 'OK', clear: 'Clear' },
+                datepicker: {
+                  now: 'Now', today: 'Today', cancel: 'Cancel', clear: 'Clear', confirm: 'OK',
+                  selectDate: 'Select date', selectTime: 'Select time', startDate: 'Start Date', startTime: 'Start Time',
+                  endDate: 'End Date', endTime: 'End Time', prevYear: 'Previous Year', nextYear: 'Next Year',
+                  prevMonth: 'Previous Month', nextMonth: 'Next Month', year: '', month1: 'January', month2: 'February',
+                  month3: 'March', month4: 'April', month5: 'May', month6: 'June', month7: 'July', month8: 'August',
+                  month9: 'September', month10: 'October', month11: 'November', month12: 'December',
+                  weeks: { sun: 'Sun', mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat' },
+                  months: {
+                    jan: 'Jan', feb: 'Feb', mar: 'Mar', apr: 'Apr', may: 'May', jun: 'Jun',
+                    jul: 'Jul', aug: 'Aug', sep: 'Sep', oct: 'Oct', nov: 'Nov', dec: 'Dec'
+                  }
+                },
+                select: { noData: 'No data', noMatch: 'No matching data', loading: 'Loading' },
+                cascader: { noData: 'No data', noMatch: 'No matching data', loading: 'Loading' },
+                pagination: {
+                  goto: 'Go to', pagesize: '/page', total: 'Total {total}', pageClassifier: '',
+                  deprecationWarning: ''
+                },
+                messagebox: { title: 'Message', confirm: 'OK', cancel: 'Cancel', error: 'Illegal input' },
+                upload: {
+                  deleteTip: 'press delete to remove', delete: 'Delete', preview: 'Preview', continue: 'Continue'
+                },
+                table: {
+                  emptyText: 'No Data', confirmFilter: 'Confirm', resetFilter: 'Reset', clearFilter: 'All',
+                  sumText: 'Sum'
+                },
+                tree: { emptyText: 'No Data' },
+                transfer: {
+                  noMatch: 'No matching data', noData: 'No data', titles: ['List 1', 'List 2'],
+                  filterPlaceholder: 'Enter keyword', noCheckedFormat: '{total} items', hasCheckedFormat: '{checked}/{total} checked'
+                },
+                image: { error: 'FAILED' },
+                pageHeader: { title: 'Back' },
+                popconfirm: { confirmButtonText: 'Yes', cancelButtonText: 'No' },
+                empty: { description: 'No Data' }
+              }
+            };
+            window.ELEMENT.locale(en);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="{{  asset('vendor/cropper/cropper.min.css') }}">
     <script src="{{ asset('vendor/cropper/cropper.min.js') }}"></script>
     <script src="{{ asset('vendor/vuedraggable/vuedraggable.umd.min.js') }}"></script>
@@ -867,7 +919,7 @@
     }
 
     .file-card[data-is-dir="true"]:hover::after {
-      content: "双击进入";
+      content: "Double-click to enter";
       position: absolute;
       bottom: 5px;
       right: 5px;
@@ -991,7 +1043,7 @@
 
     /* 拖拽提示文本 */
     .el-tree-node.is-drop-inner::after {
-      content: "放置到此处";
+      content: "Drop here";
       position: absolute;
       right: 10px;
       color: #8446df;
@@ -1014,7 +1066,7 @@
 
     /* 拖拽提示 */
     .el-tree-node.is-drop-inner::after {
-      content: "放置到此处";
+      content: "Drop here";
       position: absolute;
       right: 10px;
       color: #8446df;
@@ -1090,7 +1142,7 @@
 
     /* 拖拽提示 */
     .el-tree-node.drag-over>.el-tree-node__content::after {
-      content: "放置到此处";
+      content: "Drop here";
       position: absolute;
       right: 10px;
       color: #8446df;
@@ -1158,7 +1210,7 @@
 
     /* 文件夹接收拖拽时的提示 */
     .file-card[data-is-dir="true"].drag-over::after {
-      content: "放置到此处";
+      content: "Drop here";
       position: absolute;
       bottom: 5px;
       right: 5px;

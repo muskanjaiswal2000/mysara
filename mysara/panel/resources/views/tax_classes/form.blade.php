@@ -17,17 +17,17 @@
       @method($tax_class->id ? 'PUT' : 'POST')
 
       <div class="wp-500 m-auto">
-        <x-common-form-input title="名称" name="name" value="{{ old('name', $tax_class->name) }}" required placeholder="名称" />
-        <x-common-form-input title="描述" name="description" value="{{ old('description', $tax_class->description) }}" required placeholder="描述" />
-        <x-panel::form.row title="规则" required>
+        <x-common-form-input title="Name" name="name" value="{{ old('name', $tax_class->name) }}" required placeholder="Name" />
+        <x-common-form-input title="Description" name="description" value="{{ old('description', $tax_class->description) }}" required placeholder="Description" />
+        <x-panel::form.row title="Rules" required>
           @php ($index = 0)
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th>所属税率</th>
-                <th>基于地址</th>
-                <th>优先级</th>
-                <th class="text-end">操作</th>
+                <th>Tax Rate</th>
+                <th>Based On</th>
+                <th>Priority</th>
+                <th class="text-end">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
                   </td>
                   <td>
                     <input type="text" name="tax_rules[{{ $index }}][priority]" class="form-control form-control-sm"
-                           value="{{ $rule->priority }}" placeholder="优先级">
+                           value="{{ $rule->priority }}" placeholder="Priority">
                   </td>
                   <td class="text-end">
                     <button type="button" class="btn btn-sm btn-outline-danger remove-tax">{{ __('panel/common.delete')}}</button>
@@ -97,12 +97,12 @@
           </td>
           <td>
             <select class="form-select form-select-sm" name="tax_rules[${index}][based]" required>
-              <option value="price">价格</option>
-              <option value="weight">重量</option>
+              <option value="price">Price</option>
+              <option value="weight">Weight</option>
             </select>
           </td>
           <td>
-          <input type="text" name="tax_rules[{{ $index }}][priority]" class="form-control form-control-sm" value="0" placeholder="优先级">
+          <input type="text" name="tax_rules[{{ $index }}][priority]" class="form-control form-control-sm" value="0" placeholder="Priority">
           </td>
           <td class="text-end">
             <button type="button" class="btn btn-sm btn-outline-danger remove-tax">{{ __('panel/common.delete')}}</button>

@@ -24,6 +24,19 @@
   <script src="{{ asset('vendor/layer/3.5.1/layer.js') }}"></script>
   <script src="{{ mix('build/panel/js/app.js') }}"></script>
   <script>
+    // Force Element Plus locale to English if the bundle includes locales
+    (function() {
+      try {
+        if (window.ElementPlus && typeof ElementPlus.locale === 'function') {
+          var en = (ElementPlus.lang && ElementPlus.lang.en) ? ElementPlus.lang.en : null;
+          if (en) {
+            ElementPlus.locale(en);
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script>
     let urls = {
       api_base: '{{ route('api.panel.base.index') }}',
       base_url: '{{ panel_route('home.index') }}',

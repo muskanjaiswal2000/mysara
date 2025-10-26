@@ -73,10 +73,7 @@
       });
     }
     function syncFakeScrollbar() {
-      // 设置假滚动条宽度与表格一致
       $('#fake-scrollbar-inner').width($('#productTable').outerWidth());
-
-      // 同步滚动
       $('.table-fake-scrollbar').on('scroll', function() {
         $('.table-inner-scroll').scrollLeft($(this).scrollLeft());
       });
@@ -124,7 +121,6 @@
   </script>
   @stack('header')
   <style>
-    /* 用Bootstrap类名替代大部分自定义样式，仅保留必要的微调 */
     .product-list-container {
       
       overflow-y: auto;
@@ -200,7 +196,7 @@
       <div class="table-responsive product-list-container" style="max-height:500px;overflow-y:auto;">
         <table class="table table-hover align-middle mb-0" id="productTable">
           <tbody>
-            <!-- JS 动态插入 -->
+            
           </tbody>
         </table>
       </div>

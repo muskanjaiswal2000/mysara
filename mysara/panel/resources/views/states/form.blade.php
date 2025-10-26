@@ -12,11 +12,11 @@
       @csrf
       @method($state->id ? 'PUT' : 'POST')
 
-      <x-common-form-input title="名称" name="name" :value="old('name', $state->name ?? '')" required placeholder="名称" />
-      <x-common-form-input title="编码" name="code" :value="old('code', $state->code ?? '')" required placeholder="编码" />
-      <x-common-form-image title="标识" name="image" :value="old('image', $state->image ?? '')" placeholder="image" />
-      <x-common-form-input title="排序" name="position" :value="old('position', $state->slug ?? '')" required placeholder="排序" />
-      <x-common-form-input title="启用" name="active" :value="old('active', $state->active ?? '')" placeholder="启用" />
+      <x-common-form-input title="Name" name="name" :value="old('name', $state->name ?? '')" required placeholder="Name" />
+      <x-common-form-input title="Code" name="code" :value="old('code', $state->code ?? '')" required placeholder="Code" />
+      <x-common-form-image title="Logo" name="image" :value="old('image', $state->image ?? '')" placeholder="image" />
+      <x-common-form-input title="Position" name="position" :value="old('position', $state->slug ?? '')" required placeholder="Position" />
+      <x-common-form-input title="Enabled" name="active" :value="old('active', $state->active ?? '')" placeholder="Enabled" />
 
       <div class="form-row mt-5 d-flex">
         <div class="wp-200 pe-2"></div>

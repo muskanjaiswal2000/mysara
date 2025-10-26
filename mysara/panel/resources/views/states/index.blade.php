@@ -70,25 +70,25 @@
       </template>
       <el-form ref="formRef" label-position="top" :model="form" :rules="rules" label-width="auto" status-icon>
         <el-form-item label="{{ __('panel/common.name') }}" prop="name">
-          <el-input v-model="form.name" placeholder="名称"></el-input>
+          <el-input v-model="form.name" placeholder="Name"></el-input>
         </el-form-item>
 
-        <el-form-item label="编码" prop="code">
-          <el-input v-model="form.code" placeholder="编码"></el-input>
+        <el-form-item label="Code" prop="code">
+          <el-input v-model="form.code" placeholder="Code"></el-input>
         </el-form-item>
 
-        <el-form-item label="国家代码" prop="country_id">
+        <el-form-item label="Country" prop="country_id">
           <select v-model="form.country_id" class="form-control"
                   @change="form.country_code = countries.find(item => item.id == form.country_id).code">
             <option v-for="item in countries" :value="item . id">@{{ item.name }}</option>
           </select>
         </el-form-item>
 
-        <el-form-item label="排序" prop="position">
-          <el-input v-model="form.position" placeholder="排序"></el-input>
+        <el-form-item label="Position" prop="position">
+          <el-input v-model="form.position" placeholder="Position"></el-input>
         </el-form-item>
 
-        <el-form-item label="状态" prop="active">
+        <el-form-item label="Status" prop="active">
           <el-switch v-model="form.active" :active-value="1" :inactive-value="0"></el-switch>
         </el-form-item>
       </el-form>

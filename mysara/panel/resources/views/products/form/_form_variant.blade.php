@@ -894,7 +894,7 @@
         let appliedCount = 0;
         
         if (matchingSKUs.length === 0) {
-          layer.msg('没有匹配的SKU，请检查规格选择', {icon: 2});
+          layer.msg('No matching SKUs. Please check variant selections', {icon: 2});
           return;
         }
         
@@ -948,11 +948,11 @@
         }
         
         if (appliedCount === 0) {
-          layer.msg('请至少填写一个字段进行批量设置', {icon: 2});
+          layer.msg('Please fill in at least one field to apply in batch', {icon: 2});
           return;
         }
         
-        layer.msg(`批量设置完成，已应用 ${appliedCount} 个字段到 ${matchingSKUs.length} 个SKU`, {icon: 1});
+        layer.msg(`Batch settings completed. Applied ${appliedCount} field(s) to ${matchingSKUs.length} SKU(s)`, {icon: 1});
       };
       
 
