@@ -57,7 +57,7 @@ class FileManagerController extends BaseController
     }
 
     /**
-     * 获取文件管理器的基础配置数据
+     * 
      * Get basic configuration data for file manager
      *
      * @return array
@@ -83,7 +83,7 @@ class FileManagerController extends BaseController
             'type'        => $request->query('type', 'all'),
             'base_folder' => '/',
             'driver'      => plugin_setting('file_manager', 'driver', 'local'),
-            'title'       => plugin_setting('file_manager', 'driver') === 'oss' ? 'OSS 文件管理' : '图片空间',
+            'title'       => plugin_setting('file_manager', 'driver') === 'oss' ? 'OSS' : 'File Manager',
             'config'      => [
                 'driver'   => plugin_setting('file_manager', 'driver', 'local'),
                 'endpoint' => plugin_setting('file_manager', 'endpoint', ''),

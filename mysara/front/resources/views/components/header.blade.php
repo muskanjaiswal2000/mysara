@@ -50,7 +50,7 @@
   <div class="header-desktop">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="left">
-        <h1 class="logo">
+        <h1 class="logo" style="max-width: 60px;">
           <a href="{{ front_route('home.index') }}">
             <img src="{{ image_origin(system_setting('front_logo', 'images/logo.svg')) }}" class="img-fluid">
           </a>

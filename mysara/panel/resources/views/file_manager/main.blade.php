@@ -2242,7 +2242,7 @@
 
             this.folders = [{
               id: '/',
-              name: '图片空间',
+              name: 'File Manager',
               path: '/',
               isRoot: true,
               children: folders.map(folder => ({
@@ -2261,7 +2261,7 @@
             // 默认选中根目录
             this.currentFolder = {
               id: '/',
-              name: '图片空间',
+              name: 'File Manager',
               path: '/'
             };
 
